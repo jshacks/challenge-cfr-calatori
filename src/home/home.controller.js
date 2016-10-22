@@ -2,7 +2,7 @@
 
 var SiorpcClient = require('siorpc-client').SioRpcClient;
 
-export default class homeController {
+export default class HomeController {
   static get $inject() {
     return ['$scope'];
   }

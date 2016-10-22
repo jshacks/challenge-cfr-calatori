@@ -1,9 +1,9 @@
 <div class="container bs-docs-container">
   <h1> Whatever </h1>
-  <md-button ng-click="homeController.showData = !homeController.showData">Whatever</md-button>
-  <div ng-if="homeController.showData">
+  <md-button ng-click="ctrl.showData = !ctrl.showData">Whatever</md-button>
+  <div ng-if="ctrl.showData">
     <ul>
-      <li ng-repeat="station in homeController.stations">
+      <li ng-repeat="station in ctrl.stations">
         {{station}}
       </li>
     </ul>
