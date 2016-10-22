@@ -13,7 +13,7 @@ export default class HomeController {
     this.departure = null;
     this.arrival = null;
 
-    var siorpcClient = new SiorpcClient('http://localhost:18080');
+    var siorpcClient = new SiorpcClient('http://cfr-calatori.tk:18080');
 
     siorpcClient.call('ro.jshacks.getStations', 0, 10000).then((res) => {
       this.stations = res;
