@@ -8,4 +8,18 @@
       </li>
     </ul>
   </div>
+
+  <form name="travel">
+    <label>Plecare</label>
+    <select ng-model="ctrl.departure">
+      <option ng-repeat="station in ctrl.stations | limitTo: 100" value="{{station.name}}" ng-bind="station.name"></option>
+    </select>
+
+    <label>Destinatie</label>
+    <select ng-model="ctrl.arrival">
+      <option ng-repeat="station in ctrl.stations" value="{{station.name}}" ng-bind="station.name"></option>
+    </select>
+
+    <button ng-click="ctrl.submit()">Trimite</button>
+  </form>
 </div>
