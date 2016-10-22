@@ -1,0 +1,11 @@
+{
+  "neo4j": {
+    "url": "bolt://localhost",
+    "user": "neo4j",
+    "password": "neo4jpsd"
+  },
+  "api": {
+    "url": "http://localhost:18080",
+    "port": "18080"
+  }
+}
