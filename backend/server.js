@@ -13,7 +13,10 @@ const rpcApi = new RpcApi(apiParams);
 
 (async function main() {
   try {
-    const appServer = http.createServer();
+    const appServer = http.createServer((req, res) => {
+      res.setHeader('content-type', 'application/json');
+      res.end('{"status":"OK"}');
+    });
 
     const sioRpcServer = new SioRpcServer(appServer);
     rpcApi.register(sioRpcServer);
