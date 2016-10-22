@@ -1,0 +1,5 @@
+
+{
+ "presets": ["es2015", "stage-0"],
+ "plugins": [["transform-runtime"], ["transform-decorators-legacy"], ["transform-export-extensions"], ["transform-class-properties"], ["transform-async-to-generator"]]
+}
