@@ -1,6 +1,8 @@
 <div class="container bs-docs-container">
   <h1> Whatever </h1>
-  <md-button ng-click="ctrl.showData = !ctrl.showData">Whatever</md-button>
+  <md-button ng-click="ctrl.fuckShitUp(ctrl.start, ctrl.end)">Whatever</md-button>
+  <input ng-model="ctrl.start">Start</input>
+  <input ng-model="ctrl.end">End</input>
   <div ng-if="ctrl.showData">
     <ul>
       <li ng-repeat="station in ctrl.stations">
@@ -12,14 +14,14 @@
   <form name="travel">
     <label>Plecare</label>
     <select ng-model="ctrl.departure">
-      <option ng-repeat="station in ctrl.stations | limitTo: 100" value="{{station.name}}" ng-bind="station.name"></option>
+      <option ng-repeat="station in ctrl.stations | limitTo: 100" value="{{station.id}}" ng-bind="station.name"></option>
     </select>
 
     <label>Destinatie</label>
     <select ng-model="ctrl.arrival">
-      <option ng-repeat="station in ctrl.stations" value="{{station.name}}" ng-bind="station.name"></option>
+      <option ng-repeat="station in ctrl.stations" value="{{station.id}}" ng-bind="station.name"></option>
     </select>
 
-    <button ng-click="ctrl.submit()">Trimite</button>
+    <button ng-click="ctrl.fuckShitUp(ctrl.departure, ctrl.arrival)">Trimite</button>
   </form>
 </div>

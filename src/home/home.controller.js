@@ -13,14 +13,22 @@ export default class HomeController {
     this.departure = null;
     this.arrival = null;
 
-    var siorpcClient = new SiorpcClient('http://cfr-calatori.tk:18080');
+    var siorpcClient = new SiorpcClient('http://localhost:18080');
 
     siorpcClient.call('ro.jshacks.getStations', 0, 10000).then((res) => {
-      console.log('res', res);
       this.stations = res;
     }, (err) => {
       console.log('err', err);
     });
+
+    this.fuckShitUp = function(start, end) {
+      console.log('hadicapat')
+      siorpcClient.call('ro.jshacks.shortestPath', start, end).then((res) => {
+        console.log('res', res);
+      }, (err) => {
+        console.log('err', err);
+      });
+    }
   }
 
   submit() {
