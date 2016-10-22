@@ -8,7 +8,6 @@ import home from './home/home.module.js';
 import appConfig from './app.config.js';
 import appRoute from './app.route.js';
 import appRun from './app.run.js';
-import services from './services';
 /**
  * Import all application styles here.
  */
@@ -23,7 +22,6 @@ angular.module('app', [
   core,
   // Feature areas.
   home,
-  services
   // yeoman:inject:feature
 ])
 // Register config.

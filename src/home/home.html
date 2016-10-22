@@ -4,5 +4,12 @@
 -->
 <div class="container bs-docs-container">
   <h1> Whatever </h1>
-  <md-button>Whatever</md-button>
+  <md-button ng-click="homeController.showData = !homeController.showData">Whatever</md-button>
+  <div ng-if="homeController.showData">
+    <ul>
+      <li ng-repeat="station in homeController.stations">
+        {{station}}
+      </li>
+    </ul>
+  </div>
 </div>

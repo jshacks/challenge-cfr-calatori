@@ -1,18 +1,22 @@
-/**
- * This is the home controller.
- * @memberOf Home Module
- * @namespace Home Controller
- */
+'use strict';
 
-/**
- * @name homeController
- * @desc Create the controller.
- * @param homeService
- * @memberOf Home Module.Home Controller
- * @ngInject
- */
-function homeController(homeService) {
-  console.log('whatever');
+var SiorpcClient = require('siorpc-client').SioRpcClient;
+
+export default class homeController {
+  static get $inject() {
+    return ['$scope'];
+  }
+
+  constructor($scope) {
+    this.$scope = $scope;
+
+    var siorpcClient = new SiorpcClient('http://cfr-calatori.tk:18080');
+
+    siorpcClient.call('ro.jshacks.getStations', 0, 10000).then((res) => {
+      console.log('res', res);
+      this.stations = res;
+    }, (err) => {
+      console.log('err', err);
+    });
+  }
 }
-
-export default homeController;

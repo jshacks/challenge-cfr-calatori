@@ -19,7 +19,7 @@ import './home.less';
  */
 angular.module('home', [
   // Shared modules.
-  core
+  core,
 ])
 // Register config.
 .config(homeConfig)
