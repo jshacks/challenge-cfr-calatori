@@ -11,7 +11,7 @@ import appRun from './app.run.js';
 /**
  * Import all application styles here.
  */
-import './app.whitelabel.less';
+// import './app.whitelabel.less';
 /**
  * This is the application module. It it the entry point for this website.
  * Only declare the module's dependencies in this file.
