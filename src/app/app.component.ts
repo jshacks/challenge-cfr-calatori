@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(public apiService: ApiService) {
     apiService.getStations().then((res) => {
       this.stations = res;
-    }, (err) => {
+   }, (err) => {
       console.error(err);
     });
   }
