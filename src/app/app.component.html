@@ -1,16 +1,98 @@
-<div class="container">
-  <h2>CFR, FORZZA CFR!</h2>
+<html>
+	<head>
+		<title>CFR Calatori</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+			<div class="top-header" id="header">
+				<div class="wrap">
+				<div class="top-header-left">
+					<ul>
+						<li><a href="#"><span> </span> Autentificare</a></li>
+						<li><p><span> </span>Nu esti membru? </p>&nbsp;<a class="reg" href="#"> Inregistreaza-te</a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				<div class="top-header-right">
+					<ul>
+						<li><a class="face" href="#"><span> </span></a></li>
+						<li><a class="twit" href="#"><span> </span></a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			</div>
+			<div class="header">
+				<div class="wrap">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" title="voyage" /></a>
+				</div>
+				<div class="top-nav">
+						<ul class="flexy-menu thick orange">
+							<li class="active"><a href="index.html">Prima pagina</a></li>
+							<li><a href="">Servicii</a></li>
+							<li><a href="">Despre noi</a></li>
+							<li><a href="">Noutati</a></li>
+							<li><a href="">Contact</a></li>
+						</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		<div class="images-slider">
+		    <div id="fwslider">
+		        <div class="slider_container">
+		            <div class="slide">
+                    <img src="images/slider-bg.jpg" alt=""/>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="find-place">
+			<div class="wrap">
+				<div class="p-h">
+					<span>Cauta</span>
+					<label>Trenuri</label>
+				</div>
+				<div class="p-ww">
+				  <form (ngSubmit)="findShortestPath(routeForm.value.departure, routeForm.value.arrival)" #routeForm="ngForm">
+				    <label>Plecare</label>
+				    <select ngModel name="departure">
+				      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
+				    </select>
 
-  <form (ngSubmit)="findShortestPath(routeForm.value.departure, routeForm.value.arrival)" #routeForm="ngForm">
-    <label>Plecare</label>
-    <select ngModel name="departure">
-      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
-    </select>
+				    <label>Destinatie</label>
+				    <select ngModel name="arrival">
+				      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
+				    </select>
 
-    <label>Destinatie</label>
-    <select ngModel name="arrival">
-      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
-    </select>
-    <button>Trimite</button>
-  </form>
-</div>
+						<input class="date" id="datepicker" type="text" value="Select date">
+				    <button>Trimite</button>
+				  </form>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		<div class="clients">
+			<div class="wrap">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt semper commodo. Sed tellus nulla, euismod sit amet tincidunt sed, viverra in velit. Praesent eu nibh ultricies, molestie risus at, lacinia metus. Curabitur non ornare quam. In id elit vel dui ultricies rutrum sit amet et lectus. Morbi erat ex, tincidunt in lectus id, dapibus cursus tellus. Aliquam erat volutpat. Praesent nec augue tristique, ultrices nisl non, pellentesque lacus. Ut a ultrices lacus. In ultricies semper tortor, sit amet pulvinar lorem suscipit rhoncus. Duis eget placerat arcu, sit amet venenatis ante. Duis sit amet imperdiet nunc. Nullam euismod ornare quam, sit amet ornare nulla dapibus eget. Cras dapibus fringilla quam, eu blandit sapien porttitor eu. Praesent eu neque sem. Donec congue hendrerit ex, nec gravida nibh blandit nec.</p>
+				<hr/>
+				<p>Vestibulum quis ornare risus. Nunc facilisis arcu vel sem finibus ultrices. Proin interdum tortor ac ligula mollis, in finibus sapien molestie. Ut sed tincidunt metus, quis facilisis mauris. Maecenas hendrerit condimentum libero. Etiam eget velit sit amet sem rutrum semper. Nunc ac nulla nec augue viverra elementum ac in risus. Morbi dapibus eros eget magna suscipit molestie. Ut hendrerit, metus sed porttitor ullamcorper, nibh ipsum rutrum quam, eu malesuada libero neque sit amet erat.</p>
+			</div>
+		</div>
+		<div class="subfooter">
+			<div class="wrap">
+				<ul>
+					<li class="active"><a href="index.html">Prima pagina</a></li>
+					<li><a href="">Servicii</a></li>
+					<li><a href="">Despre noi</a></li>
+					<li><a href="">Noutati</a></li>
+					<li><a href="">Contact</a></li>
+					<div class="clear"> </div>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
