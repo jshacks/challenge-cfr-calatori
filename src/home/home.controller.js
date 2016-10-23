@@ -22,7 +22,6 @@ export default class HomeController {
     });
 
     this.fuckShitUp = function(start, end) {
-      console.log('hadicapat')
       siorpcClient.call('ro.jshacks.shortestPath', start, end).then((res) => {
         console.log('res', res);
       }, (err) => {

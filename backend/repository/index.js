@@ -12,18 +12,16 @@ export class StationRepository {
   }
 
   async shortest(start, end) {
-    console.log(start, end)
-    console.log('hadnicap 1')
     return await this.neo4j.runInTransaction(async (transaction) => {
-      let penis = `MATCH (n:Station {stop_id: {start}}), (m:Station {stop_id: {end}}), p=allShortestPaths((n)-[:BOUND*]-(m))
-                                    WITH REDUCE(dist = 0, rel in rels(p) | dist + rel.distance) AS distance, p
-                                    RETURN length(nodes(p)), distance
-                                    ORDER BY distance
-                                    LIMIT 1
-                                   `;
-      console.log('querry', penis)
+      let penis = `MATCH (n:Station {stop_id: {start_id}}), (m:Station {stop_id: {end_id}})
+                   call apoc.algo.dijkstra(n, m, 'BOUND>', 'distance') YIELD path, weight
+                   return path, weight
+                   `,
+                   {
+                     start_id: start,
+                     end_id: end
+                   };
       const res = await transaction.run(penis, {start, end});
-      console.log('pula me')
       return this.neo4j.getOneScalar(res);
     });
   }
