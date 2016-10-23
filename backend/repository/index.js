@@ -14,9 +14,9 @@ export class StationRepository {
   async shortest(start, end) {
     return await this.neo4j.runInTransaction(async (transaction) => {
       let query = `
-                   MATCH (n:Station {stop_id: {start_id}}), (m:Station {stop_id: {end_id}})
+                   MATCH (n:Station {stop_id: {start}}), (m:Station {stop_id: {end}})
                    call apoc.algo.dijkstra(n, m, 'BOUND>', 'distance') YIELD path, weight
-                   return path, weight
+                   return nodes(path), weight
                    `;
       const res = await transaction.run(query, {start, end});
       return this.neo4j.getOneScalar(res);
