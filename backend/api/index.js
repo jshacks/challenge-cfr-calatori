@@ -10,9 +10,11 @@ export default class RpcApi {
     this.sioRpcServer.declare('ro.jshacks.getStations', async (start, limit) => {
       return await this.repository.find(start, limit);
     });
+
     this.sioRpcServer.declare('ro.jshacks.shortestPath', async (start, end) => {
       return await this.repository.shortest(start, end);
     });
+
     this.sioRpcServer.run();
   }
 }
