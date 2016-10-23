@@ -10,6 +10,10 @@ export class ApiService {
   }
 
   getStations(noStations = 2000) {
-    return this.sioRpc.call('ro.jshacks.getStations', noStations);
+    return this.sioRpc.call('ro.jshacks.getStations', 0, noStations);
+  }
+
+  findShortestPath(start, end) {
+    return this.sioRpc.call('ro.jshacks.shortestPath', start, end);
   }
 }

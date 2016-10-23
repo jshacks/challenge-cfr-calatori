@@ -8,13 +8,20 @@ import { ApiService } from './api.service';
   providers: [ApiService]
 })
 export class AppComponent {
-  title = 'app works!';
+  public stations: any;
 
-  constructor(private ApiService: ApiService) {
-    ApiService.getStations(2000).then((res) => {
-      console.log("stations: ", res);
+  constructor(public apiService: ApiService) {
+    apiService.getStations().then((res) => {
+      this.stations = res;
     }, (err) => {
-      console.log("err: ", err);
+      console.error(err);
     });
   }
+
+  findShortestPath(a, b) {
+    this.apiService.findShortestPath(a, b).then((res) => {
+      console.log(res);
+    });
+  }
+
 }

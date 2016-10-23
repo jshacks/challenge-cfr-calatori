@@ -1,4 +1,17 @@
 <div class="container">
   <title>{{title}}</title>
   <h2>CFR, FORZZA CFR!</h2>
+
+  <form (ngSubmit)="findShortestPath(routeForm.value.departure, routeForm.value.arrival)" #routeForm="ngForm">
+    <label>Plecare</label>
+    <select ngModel name="departure">
+      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
+    </select>
+
+    <label>Destinatie</label>
+    <select ngModel name="arrival">
+      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
+    </select>
+    <button>Trimite</button>
+  </form>
 </div>
