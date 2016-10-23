@@ -21,11 +21,12 @@ export default class HomeController {
       console.log('err', err);
     });
 
-    this.fuckShitUp = function(start, end) {
+    this.findShortestPath = function(start, end) {
+      console.log('start', start, 'end', end)
       siorpcClient.call('ro.jshacks.shortestPath', start, end).then((res) => {
         console.log('res', res);
       }, (err) => {
-        console.log('err', err);
+        console.error(err);
       });
     }
   }

@@ -22,6 +22,6 @@
       <option ng-repeat="station in ctrl.stations" value="{{station.id}}" ng-bind="station.name"></option>
     </select>
 
-    <button ng-click="ctrl.fuckShitUp(ctrl.departure, ctrl.arrival)">Trimite</button>
+    <button ng-click="ctrl.findShortestPath(ctrl.departure, ctrl.arrival)">Trimite</button>
   </form>
 </div>
