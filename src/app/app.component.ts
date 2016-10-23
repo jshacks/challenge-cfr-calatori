@@ -8,9 +8,7 @@ import { ApiService } from './api.service';
   providers: [ApiService]
 })
 export class AppComponent {
-  title = 'app works!';
-
-  constructor(private ApiService: ApiService) {
+  constructor(public ApiService: ApiService) {
     ApiService.getStations(2000).then((res) => {
       console.log("stations: ", res);
     }, (err) => {
