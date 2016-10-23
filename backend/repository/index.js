@@ -4,7 +4,7 @@ export class StationRepository {
   }
   async find(start, limit) {
     return await this.neo4j.runInTransaction(async (transaction) => {
-      const stationList = this.neo4j.getNodes(await transaction.run('MATCH (s:Station) RETURN s SKIP {start} LIMIT {limit}', { start, limit }));
+      const stationList = this.neo4j.getNodes(await transaction.run('MATCH (s:Station) RETURN s ORDER BY s.stop_name SKIP {start} LIMIT {limit}', { start, limit }));
       return stationList.map((station) => {
         return { name: station.properties.stop_name, id: station.properties.stop_id };
       });
